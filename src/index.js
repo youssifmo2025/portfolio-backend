@@ -8,6 +8,9 @@ import projectsRouter from './routes/projects.js';
 const app  = express();
 const PORT = process.env.PORT || 5000;
 
+// Trust Vercel's reverse proxy (required for express-rate-limit)
+app.set('trust proxy', 1);
+
 /* ──────────────────────────────────────────────────────────── */
 /*  Global Security Middleware                                  */
 /* ──────────────────────────────────────────────────────────── */
