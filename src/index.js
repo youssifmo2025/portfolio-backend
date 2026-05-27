@@ -55,3 +55,6 @@ app.listen(PORT, () => {
   console.log(`   RECEIVER     : ${process.env.RECEIVER_EMAIL || '⚠️  NOT SET'}`);
   console.log(`   CORS origin  : ${process.env.CLIENT_ORIGIN || 'http://localhost:5173'}`);
 });
+
+// Export the Express API for Vercel Serverless Functions
+export default app;
