@@ -1,0 +1,33 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependencies
+node_modules/
+
+# Environment Variables (CRITICAL)
+.env
+.env.*
+!.env.example
+
+# Database Backups
+*.bak
+*.sql
+*.sqlite3
+
+# External/Unrelated Projects (Java, C#, Android)
+Project/
+*.csproj
+*.sln
+*.java
+*.class
+*.apk
+.gradle/
+app/build/
+
+# OS and Editor Files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

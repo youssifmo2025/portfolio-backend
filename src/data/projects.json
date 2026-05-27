@@ -1,0 +1,41 @@
+[
+  {
+    "id": "chatapp",
+    "title": "Java Sockets ChatApp",
+    "shortDesc": "A secure, multi-threaded client-server chat application with real-time UI updates.",
+    "fullDesc": "A multi-threaded client-server chat application using Java Sockets and Object Streams. Features include real-time messaging, private whispers, typing indicators, an admin dashboard with kick functionalities, and a modern custom Swing UI with WhatsApp-style bubbles.",
+    "tags": ["Java", "Sockets", "Multithreading", "Swing UI"],
+    "coreSkills": ["Network Programming", "Multithreading", "Custom UI Painting"],
+    "imageUrl": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80",
+    "github": null,
+    "live": null,
+    "demo": null,
+    "featured": true
+  },
+  {
+    "id": "mediqueue",
+    "title": "MediQueue Healthcare System",
+    "shortDesc": "A comprehensive healthcare appointment and clinic management system built with ASP.NET Core MVC.",
+    "fullDesc": "MediQueue streamlines medical facility administration. It provides Role-Based Access Control (RBAC) via ASP.NET Core Identity, appointment booking, doctor and clinic portals, and an Admin Dashboard. Features a Right-to-Left (RTL) compliant UI for seamless Arabic language support.",
+    "tags": ["ASP.NET Core MVC", "Entity Framework", "SQL Server", "C#", "HTML/CSS"],
+    "coreSkills": ["RBAC Authentication", "Database Design", "RTL UI Design"],
+    "imageUrl": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80",
+    "github": null,
+    "live": null,
+    "demo": null,
+    "featured": true
+  },
+  {
+    "id": "taskapp",
+    "title": "Android Task Manager",
+    "shortDesc": "A native Android to-do list application for managing daily tasks.",
+    "fullDesc": "A clean and efficient Android application built in Java for managing tasks. It utilizes Android SDK components such as ListView and ArrayAdapter to handle dynamic lists. Features include adding new items, toast notifications, and long-click to delete functionalities.",
+    "tags": ["Android SDK", "Java", "XML Layouts", "Mobile"],
+    "coreSkills": ["Mobile App Development", "UI Event Handling", "Native Android"],
+    "imageUrl": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80",
+    "github": null,
+    "live": null,
+    "demo": null,
+    "featured": false
+  }
+]
