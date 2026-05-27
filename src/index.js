@@ -15,10 +15,29 @@ const PORT = process.env.PORT || 5000;
 // 1. Helmet — sets 11+ secure HTTP headers
 app.use(configureHelmet());
 
-// 2. CORS — only allow the configured client origin
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+  origin: function (origin, callback) {
+    // Allow requests with no origin (e.g. mobile apps, curl)
+    if (!origin) return callback(null, true);
+
+    // 1. Allow Localhost for development
+    const isLocalhost = origin === 'http://localhost:5173';
+    
+    // 2. Allow any Netlify domain (*.netlify.app) using Regex
+    const isNetlify = /^https:\/\/[a-zA-Z0-9-]+\.netlify\.app$/.test(origin);
+    
+    // 3. Fallback to explicit FRONTEND_URL if set in env variables
+    const isAllowedEnv = process.env.FRONTEND_URL && origin === process.env.FRONTEND_URL;
+
+    if (isLocalhost || isNetlify || isAllowedEnv) {
+      callback(null, true);
+    } else {
+      console.warn(`[CORS] Blocked request from origin: ${origin}`);
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Handles pre-flight OPTIONS requests
 }));
 
 // 3. Body parsing — size-capped to prevent payload flooding

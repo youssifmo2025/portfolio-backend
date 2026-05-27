@@ -31,3 +31,5 @@ app/build/
 Thumbs.db
 .vscode/
 .idea/
+
+.vercel
