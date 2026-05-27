@@ -1,5 +1,4 @@
 import { body, validationResult } from 'express-validator';
-import DOMPurify from 'isomorphic-dompurify';
 import dns from 'dns';
 
 /* ------------------------------------------------------------------ */
@@ -62,6 +61,8 @@ export async function validateContactForm(req, res, next) {
   }
 
   // Final DOMPurify sweep on all string fields (defence-in-depth)
+  // Using dynamic import to avoid ERR_REQUIRE_ESM on Vercel
+  const { default: DOMPurify } = await import('isomorphic-dompurify');
   const purify = (str) => DOMPurify.sanitize(str, { ALLOWED_TAGS: [], ALLOWED_ATTR: [] });
   req.body.name    = purify(req.body.name);
   req.body.message = purify(req.body.message);
